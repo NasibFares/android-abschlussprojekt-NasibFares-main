@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/navigation_header_container"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/buttons">
+
+
+    <ImageView
+        android:id="@+id/iv_UserProfilePhoto"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:importantForAccessibility="no"
+        android:src="@drawable/baseline_person_24"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="2dp"
+        android:layout_marginStart="2dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+       />
+
+    <TextView
+        android:id="@+id/tv_userName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Nasib Fares"
+        android:textColor="@color/com_facebook_blue"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/iv_UserProfilePhoto"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_emailAdress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:layout_marginBottom="3dp"
+        android:text="nasib.y.fares@gmail.com"
+        android:textColor="@color/com_facebook_blue"
+        android:textSize="14sp"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/tv_userName"
+        app:layout_constraintStart_toStartOf="@+id/tv_userName"
+        app:layout_constraintTop_toBottomOf="@+id/tv_userName" />
+</androidx.constraintlayout.widget.ConstraintLayout>

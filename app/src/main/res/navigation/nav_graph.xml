@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/splashScreenFragment">
+    <!-- HOME FRAGMENT -->
+    <fragment
+        android:id="@+id/homeFragment"
+        tools:layout="@layout/fragment_home"
+        android:name="com.example.zuhauselernen.ui.HomeFragment"
+        android:label="HomeFragment" >
+        <action
+            android:id="@+id/action_homeFragment_to_registerFragment"
+            app:destination="@id/registerFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <!-- REGISTER FRAGMENT -->
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.example.zuhauselernen.ui.RegisterFragment"
+        tools:layout="@layout/fragment_register"
+        android:label="RegisterFragment" >
+        <action
+            android:id="@+id/action_registerFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_registerFragment_to_emailFragment"
+            app:destination="@id/emailFragment" />
+    </fragment>
+    <!-- LOGIN FRAGMENT -->
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.zuhauselernen.ui.LoginFragment"
+        tools:layout="@layout/fragment_login"
+        android:label="LoginFragment" >
+        <action
+            android:id="@+id/action_loginFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_userSubjectsFragment"
+            app:destination="@id/userSubjectsFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_subjectFragment"
+            app:destination="@id/subjectFragment" />
+    </fragment>
+    <!-- EMAIL FRAGMENT -->
+    <fragment
+        android:id="@+id/emailFragment"
+        android:name="com.example.zuhauselernen.ui.EmailFragment"
+        tools:layout="@layout/fragment_email_original"
+        android:label="EmailFragment" >
+        <!-- EMAIL FRAGMENT  ZURÜCK ZU REGISTER FRAGMENT-->
+        <action
+            android:id="@+id/action_emailFragment_to_registerFragment"
+            app:destination="@id/registerFragment" />
+        <!-- EMAIL FRAGMENT  VORWÄRTS  ZU SETTING FRAGMENT-->
+        <action
+            android:id="@+id/action_emailFragment_to_settingFragment"
+            app:destination="@id/settingFragment" />
+        <action
+            android:id="@+id/action_emailFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <!-- GAME FRAGMENT -->
+    <fragment
+        android:id="@+id/gameFragment"
+        android:name="com.example.zuhauselernen.data.remote.ui.GameFragment"
+        tools:layout="@layout/fragment_game"
+        android:label="GameFragment" >
+        <action
+            android:id="@+id/action_gameFragment_to_userFavouritesFragment"
+            app:destination="@id/userFavouritesFragment" />
+        <action
+            android:id="@+id/action_gameFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_gameFragment_to_userSubjectsFragment"
+            app:destination="@id/userSubjectsFragment" />
+        <argument
+            android:name="userEmailGames"
+            app:argType="string" />
+    </fragment>
+    <!-- SETTING FRAGMENT -->
+    <fragment
+        android:id="@+id/settingFragment"
+        android:name="com.example.zuhauselernen.ui.SettingFragment"
+        tools:layout="@layout/fragment_setting"
+        android:label="SettingFragment" >
+        <!-- SETTING FRAGMENT RÜCKWÄRTS ZU EMAIL FRAGMENT -->
+        <action
+            android:id="@+id/action_settingFragment_to_emailFragment"
+            app:destination="@id/emailFragment" />
+        <argument
+            android:name="userEmail"
+            app:argType="string" />
+        <!-- SETTING FRAGMENT VORWÄRTS ZU SUBJECT FRAGMENT -->
+        <action
+            android:id="@+id/action_settingFragment_to_subjectFragment"
+            app:destination="@id/subjectFragment" />
+        <action
+            android:id="@+id/action_settingFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <!-- SUBJECT FRAGMENT -->
+    <fragment
+        android:id="@+id/subjectFragment"
+        android:name="com.example.zuhauselernen.ui.SubjectFragment"
+        tools:layout="@layout/fragment_subject"
+        android:label="SubjectFragment" >
+        <!-- SUBJECT FRAGMENT RÜCKWÄRTS ZU SETTING FRAGMENT -->
+        <action
+            android:id="@+id/action_subjectFragment_to_settingFragment"
+            app:destination="@id/settingFragment" />
+
+        <!-- SUBJECT FRAGMENT VORWÄRTS ZU SUBSCRIPTION FRAGMENT -->
+        <action
+            android:id="@+id/action_subjectFragment_to_subscriptionFragment"
+            app:destination="@id/subscriptionFragment" />
+        <!-- SUBJECT FRAGMENT VORWÄRTS ZU USER SUBJECTS FRAGMENT -->
+        <action
+            android:id="@+id/action_subjectFragment_to_userSubjectsFragment"
+            app:destination="@id/userSubjectsFragment" />
+        <argument
+            android:name="userEmailSubject"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_subjectFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <!-- SUBSCRIPTION FRAGMENT -->
+    <fragment
+        android:id="@+id/subscriptionFragment"
+        android:name="com.example.zuhauselernen.ui.SubscriptionFragment"
+        tools:layout="@layout/fragment_subscription"
+        android:label="SubscriptionFragment" >
+        <argument
+            android:name="userEmailSubscription"
+            app:argType="string" />
+        <!-- SUBSCRIPTION FRAGMENT RÜCKWÄRTS ZU SUBJECTS FRAGMENT -->
+        <action
+            android:id="@+id/action_subscriptionFragment_to_subjectFragment"
+            app:destination="@id/subjectFragment" />
+        <!-- SUBSCRIPTION FRAGMENT VORWÄRTS ZU PAYMENT FRAGMENT -->
+        <action
+            android:id="@+id/action_subscriptionFragment_to_paymentFragment"
+            app:destination="@id/paymentFragment" />
+        <action
+            android:id="@+id/action_subscriptionFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <!-- SPLASH SCREEN FRAGMENT -->
+    <fragment
+        android:id="@+id/splashScreenFragment"
+        android:name="com.example.zuhauselernen.ui.SplashScreenFragment"
+        tools:layout="@layout/fragment_splash_screen"
+        android:label="SplashScreenFragment" >
+        <!-- SPLASH SCREEN FRAGMENT VORWÄRTS ZU HOME FRAGMENT -->
+        <action
+            android:id="@+id/action_splashScreenFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <!-- PAYMENT FRAGMENT -->
+    <fragment
+        android:id="@+id/paymentFragment"
+        android:name="com.example.zuhauselernen.ui.PaymentFragment"
+        tools:layout="@layout/fragment_payment_old"
+        android:label="PaymentFragment" >
+        <!-- PAYMENT FRAGMENT RÜCKWÄRTS ZU SUBSCRIPTION FRAGMENT -->
+        <action
+            android:id="@+id/action_paymentFragment_to_subscriptionFragment"
+            app:destination="@id/subscriptionFragment" />
+        <!-- PAYMENT FRAGMENT RÜCKWÄRTS ZU USER SUBJECTS FRAGMENT -->
+        <action
+            android:id="@+id/action_paymentFragment_to_userSubjectsFragment"
+            app:destination="@id/userSubjectsFragment" />
+        <argument
+            android:name="userEmailPayment"
+            app:argType="string" />
+        <argument
+            android:name="paymentMethod"
+            app:argType="string" />
+        <argument
+            android:name="paymentId"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_paymentFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <!-- USER PAYMENT FRAGMENT -->
+    <fragment
+        android:id="@+id/userPaymentFragment"
+        android:name="com.example.zuhauselernen.ui.UserPaymentFragment"
+        tools:layout="@layout/fragment_user_payment"
+        android:label="UserPaymentFragment" >
+        <!-- USER PAYMENT FRAGMENT RÜCKWÄRTS ZU USER SUBSCRIPTION FRAGMENT -->
+        <action
+            android:id="@+id/action_userPaymentFragment_to_userSubscriptionFragment"
+            app:destination="@id/userSubscriptionFragment" />
+        <!-- USER PAYMENT FRAGMENT VORWÄRTS ZU USER SUBJECTS FRAGMENT -->
+        <action
+            android:id="@+id/action_userPaymentFragment_to_userSubjectsFragment"
+            app:destination="@id/userSubjectsFragment" />
+        <argument
+            android:name="userEmailUserPayment"
+            app:argType="string" />
+        <argument
+            android:name="paymentMethodUserPayment"
+            app:argType="string" />
+        <argument
+            android:name="paymentIdUserPayment"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_userPaymentFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+
+    </fragment>
+    <!-- USER SUBJECTS FRAGMENT -->
+    <fragment
+        android:id="@+id/userSubjectsFragment"
+        android:name="com.example.zuhauselernen.ui.UserSubjectsFragment"
+        tools:layout="@layout/fragment_user_subjects"
+        android:label="UserSubjectsFragment" >
+        <!-- USER SUBJECTS FRAGMENT RÜCKWÄRTS ZU HOME SUBJECTS FRAGMENT -->
+        <action
+            android:id="@+id/action_userSubjectsFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <!-- USER SUBJECTS FRAGMENT VORWÄRTS ZU USER SETTING FRAGMENT -->
+        <action
+            android:id="@+id/action_userSubjectsFragment_to_userSettingFragment"
+            app:destination="@id/userSettingFragment" />
+        <!-- USER SUBJECTS FRAGMENT VORWÄRTS ZU USER SUBSCRIPTION FRAGMENT -->
+        <action
+            android:id="@+id/action_userSubjectsFragment_to_userSubscriptionFragment"
+            app:destination="@id/userSubscriptionFragment" />
+
+        <action
+            android:id="@+id/action_userSubjectsFragment_to_invoiceFragment"
+            app:destination="@id/invoiceFragment" />
+        <argument
+            android:name="userEmailUserSubjects"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_userSubjectsFragment_to_gameFragment"
+            app:destination="@id/gameFragment" />
+        <action
+            android:id="@+id/action_userSubjectsFragment_to_userFavouritesFragment"
+            app:destination="@id/userFavouritesFragment" />
+    </fragment>
+    <!-- USER SETTING FRAGMENT -->
+    <fragment
+        android:id="@+id/userSettingFragment"
+        android:name="com.example.zuhauselernen.ui.UserSettingFragment"
+        tools:layout="@layout/fragment_user_setting"
+        android:label="UserSettingFragment" >
+        <!-- USER SETTING FRAGMENT RÜCKWÄRTS ZU USER SUBJECTS FRAGMENT -->
+        <argument
+            android:name="emailUserSetting"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_userSettingFragment_to_userSubjectsFragment"
+            app:destination="@id/userSubjectsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/userSubscriptionFragment"
+        tools:layout="@layout/fragment_user_subscription"
+        android:name="com.example.zuhauselernen.ui.UserSubscriptionFragment"
+        android:label="UserSubscriptionFragment" >
+        <argument
+            android:name="userEmailUserSubscription"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_userSubscriptionFragment_to_userSubjectsFragment"
+            app:destination="@id/userSubjectsFragment" />
+        <action
+            android:id="@+id/action_userSubscriptionFragment_to_userPaymentFragment"
+            app:destination="@id/userPaymentFragment" />
+        <action
+            android:id="@+id/action_userSubscriptionFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <!-- INVOICE FRAGMENT -->
+    <fragment
+        android:id="@+id/invoiceFragment"
+        tools:layout="@layout/fragment_invoice"
+        android:name="com.example.zuhauselernen.ui.InvoiceFragment"
+        android:label="InvoiceFragment" >
+        <argument
+            android:name="userEmailUserInvoices"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_invoiceFragment_to_userSubjectsFragment"
+            app:destination="@id/userSubjectsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/userFavouritesFragment"
+        tools:layout="@layout/fragment_user_favourites"
+        android:name="com.example.zuhauselernen.ui.UserFavouritesFragment"
+        android:label="UserFavouritesFragment" >
+        <argument
+            android:name="userEmailFavourites"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_userFavouritesFragment_to_userSubjectsFragment"
+            app:destination="@id/userSubjectsFragment" />
+        <action
+            android:id="@+id/action_userFavouritesFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+
+</navigation>

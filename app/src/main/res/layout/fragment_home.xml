@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/backgroundColor">
+
+
+
+        <ImageView
+            android:id="@+id/iv_homeImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:contentDescription="@string/homePhoto"
+            android:src="@drawable/home_screen_photo"
+            app:layout_constraintEnd_toEndOf="@+id/tv_appName"
+            app:layout_constraintStart_toStartOf="@+id/tv_appName"
+            app:layout_constraintTop_toBottomOf="@+id/tv_appName" />
+
+        <ImageView
+            android:id="@+id/appLogoHome"
+            android:layout_width="118dp"
+            android:layout_height="119dp"
+            android:layout_marginTop="50dp"
+            android:contentDescription="@string/homeLogo"
+            android:src="@drawable/homelogo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ImageContrastCheck" />
+
+        <TextView
+            android:id="@+id/tv_appName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-medium"
+            android:text="@string/appName"
+            android:textAlignment="center"
+            android:textSize="34sp"
+            android:textStyle="bold"
+            app:cornerRadius="10dp"
+            app:layout_constraintEnd_toEndOf="@+id/appLogoHome"
+            app:layout_constraintStart_toStartOf="@+id/appLogoHome"
+            app:layout_constraintTop_toBottomOf="@+id/appLogoHome"
+            tools:ignore="TextContrastCheck" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/register"
+            android:layout_width="225dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:backgroundTint="@color/buttons"
+            android:fontFamily="@font/calistoga"
+            android:text="@string/registrieren"
+            android:textAllCaps="false"
+            android:textColor="#0288D1"
+            android:textSize="18sp"
+            android:textStyle="normal"
+            app:cornerRadius="10dp"
+            app:layout_constraintEnd_toEndOf="@+id/logIn"
+            app:layout_constraintStart_toStartOf="@+id/logIn"
+            app:layout_constraintTop_toBottomOf="@+id/logIn"
+            tools:ignore="TextContrastCheck" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/logIn"
+            android:layout_width="225dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:backgroundTint="@color/buttons"
+            android:fontFamily="@font/calistoga"
+            android:text="@string/einloggen"
+            android:textAlignment="gravity"
+            android:textAllCaps="false"
+            android:textColor="#0288D1"
+            android:textSize="18sp"
+            android:textStyle="normal"
+            app:cornerRadius="10dp"
+            app:layout_constraintEnd_toEndOf="@+id/iv_homeImage"
+            app:layout_constraintStart_toStartOf="@+id/iv_homeImage"
+            app:layout_constraintTop_toBottomOf="@+id/iv_homeImage"
+            tools:ignore="TextContrastCheck" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/logOut"
+            android:layout_width="225dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:backgroundTint="@color/buttons"
+            android:fontFamily="@font/calistoga"
+            android:text="@string/mainLogout"
+            android:textAllCaps="false"
+            android:textColor="#0288D1"
+            android:textSize="18sp"
+            android:textStyle="normal"
+            app:cornerRadius="10dp"
+            app:layout_constraintEnd_toEndOf="@+id/register"
+            app:layout_constraintStart_toStartOf="@+id/register"
+            app:layout_constraintTop_toBottomOf="@+id/register"
+            tools:ignore="TextContrastCheck" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            app:layout_constraintEnd_toEndOf="@+id/tv_appName"
+            app:layout_constraintStart_toStartOf="@+id/tv_appName"
+            app:layout_constraintTop_toBottomOf="@+id/tv_appName">
+
+            <TextView
+                android:id="@+id/tv_gamesAdv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+android:visibility="gone"
+                android:text="@string/advertisement"
+                android:textColor="@color/buttons"
+                android:textSize="16sp"
+                android:textStyle="italic" />
+        </FrameLayout>
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_margin="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/baseline_light_mode_24" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/switchCompat"
+            android:layout_width="55dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="312dp"
+            android:checked="false"
+            android:padding="10dp"
+            android:text="@string/text"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView"
+            app:layout_constraintEnd_toStartOf="@+id/imageView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/imageView"
+            app:switchPadding="10dp" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

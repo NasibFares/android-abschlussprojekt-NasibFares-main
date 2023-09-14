@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/backgroundColor"
+        android:padding="8dp"
+        android:orientation="vertical"
+        tools:context="com.example.zuhauselernen.ui.InvoiceFragment">
+
+        <TextView
+            android:id="@+id/tv_myInvoices"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/toolbar"
+            android:gravity="center"
+            android:padding="16dp"
+            android:text="@string/meine_rechnungen"
+            android:textColor="@color/buttonsTextColor"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_Invoice"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:layout_weight="1"
+            android:background="@drawable/spinner_border"
+            android:padding="6dp"
+            android:scrollbars="vertical"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+
+            tools:listitem="@layout/invoice_list_items" />
+
+        <ImageButton
+            android:id="@+id/btn_cancel"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@color/toolbar"
+            android:layout_gravity="center"
+            android:src="@drawable/baseline_cancel_24"
+            app:tint="@color/buttonsTextColor"
+            android:contentDescription="@string/cancel" />
+
+
+    </LinearLayout>
+</layout>

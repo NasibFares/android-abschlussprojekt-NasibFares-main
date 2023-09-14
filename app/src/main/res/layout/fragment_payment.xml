@@ -1,0 +1,320 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/backgroundColor"
+        tools:context="com.example.zuhauselernen.ui.PaymentFragment">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbarPayment"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginBottom="8dp"
+            android:background="@color/toolbar"
+            app:layout_constraintBottom_toTopOf="@+id/iv_paymentMethod"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/tv_toolbarTitelPayment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginEnd="8dp"
+                android:text="@string/payment"
+                android:textColor="@color/buttonsTextColor"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                tools:ignore="RtlHardcoded,TextContrastCheck"
+                tools:layout_editor_absoluteX="27dp"
+                tools:layout_editor_absoluteY="8dp" />
+
+            <ImageView
+                android:id="@+id/iv_back_payment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_marginStart="8dp"
+                android:contentDescription="@string/back_setting"
+                android:src="@drawable/baseline_arrow_back_ios_24"
+                app:tint="@color/buttonsTextColor"
+                tools:layout_editor_absoluteX="6dp" />
+        </androidx.appcompat.widget.Toolbar>
+
+        <TextView
+            android:id="@+id/tv_paymentTitle"
+            android:layout_width="377dp"
+            android:layout_height="42dp"
+            android:gravity="center"
+            android:text="@string/credit_card"
+            android:textColor="@color/toolbar"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_paymentMethod" />
+
+        <ImageView
+            android:id="@+id/iv_paymentMethod"
+            android:layout_width="377dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbarPayment"
+            tools:src="@tools:sample/avatars" />
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/barrier"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="top"
+            app:constraint_referenced_ids="iv_paymentMethod" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_paymentFinish"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:backgroundTint="@color/buttons"
+            android:text="@string/forward"
+            android:textAllCaps="false"
+            android:textColor="@color/buttonsTextColorTwo"
+            android:textSize="18sp"
+            app:cornerRadius="10dp"
+            app:layout_constraintBottom_toTopOf="@+id/bottomNavView_UserPayment"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="TextContrastCheck,VisualLintBounds" />
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:indeterminate="false"
+            android:max="100"
+            android:progressDrawable="@drawable/progress_bar"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/btn_paymentFinish"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_paymentTitle" />
+
+        <TextView
+            android:id="@+id/percentageText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textColor="@color/buttons"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/progressBar"
+            app:layout_constraintEnd_toEndOf="@+id/progressBar"
+            app:layout_constraintStart_toStartOf="@+id/progressBar"
+            app:layout_constraintTop_toTopOf="@+id/progressBar" />
+
+        <TextView
+            android:id="@+id/tv_UserEmailPayment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="User e-mail"
+            android:textColor="@color/buttonsTextColor"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/tv_paymentTitle"
+            app:layout_constraintStart_toStartOf="@+id/tv_paymentTitle"
+            app:layout_constraintTop_toBottomOf="@+id/tv_paymentTitle" />
+        <!-- CARD OWNER -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tv_CardOwnerLabel"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="45dp"
+            android:fontFamily="@font/noto_sans"
+            android:hint="Inhaber der Karte"
+            android:textColor="@color/buttonsTextColor"
+            android:textColorHint="@color/hintColor"
+            app:layout_constraintEnd_toEndOf="@+id/tv_UserEmailPayment"
+            app:layout_constraintStart_toStartOf="@+id/tv_UserEmailPayment"
+            app:layout_constraintTop_toBottomOf="@+id/tv_UserEmailPayment">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/textInputCardOwner"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/noto_sans"
+                android:inputType="text"
+                android:textColor="@color/buttonsTextColor"
+                android:textColorHint="@color/hintColor" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <!-- CARD NUMBER -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tv_CardNumberLabel"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/noto_sans"
+            android:hint="Kartennummer"
+            android:textColor="@color/buttonsTextColor"
+            android:textColorHint="@color/hintColor"
+            app:layout_constraintEnd_toEndOf="@+id/tv_CardOwnerLabel"
+            app:layout_constraintStart_toStartOf="@+id/tv_CardOwnerLabel"
+            app:layout_constraintTop_toBottomOf="@+id/tv_CardOwnerLabel">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/textInputCardNumber"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/noto_sans"
+                android:inputType="number"
+                android:textColor="@color/buttonsTextColor"
+                android:textColorHint="@color/hintColor" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <!-- BIRTH DATE -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tv_BirthDate"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/noto_sans"
+            android:hint="Geburtsdatum"
+            android:textColor="@color/buttonsTextColor"
+            android:textColorHint="@color/hintColor"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="@+id/tv_CardOwnerLabel"
+            app:layout_constraintStart_toStartOf="@+id/tv_CardOwnerLabel"
+            app:layout_constraintTop_toBottomOf="@+id/tv_CardOwnerLabel">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/textInputBirthDate"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/noto_sans"
+                android:inputType="date"
+                android:textColor="@color/buttonsTextColor"
+                android:textColorHint="@color/hintColor" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- CARD EXPIRY DATE -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tv_CardExpiryDate"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/noto_sans"
+            android:hint="Ablaufdatum"
+            android:textColor="@color/buttonsTextColor"
+            android:textColorHint="@color/hintColor"
+            app:layout_constraintEnd_toEndOf="@+id/tv_CardNumberLabel"
+            app:layout_constraintStart_toStartOf="@+id/tv_CardNumberLabel"
+            app:layout_constraintTop_toBottomOf="@+id/tv_CardNumberLabel">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/textInputCardExpiryDate"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/noto_sans"
+                android:inputType="date"
+                android:textColor="@color/buttonsTextColor"
+                android:textColorHint="@color/hintColor" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <!-- ADRESS -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tv_Adress"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/noto_sans"
+            android:hint="Adresse"
+            android:textColor="@color/buttonsTextColor"
+            android:textColorHint="@color/hintColor"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="@+id/tv_BirthDate"
+            app:layout_constraintStart_toStartOf="@+id/tv_BirthDate"
+            app:layout_constraintTop_toBottomOf="@+id/tv_BirthDate">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/textInputAdress"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/noto_sans"
+                android:inputType="text"
+                android:textColor="@color/buttonsTextColor"
+                android:textColorHint="@color/hintColor" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <!-- SECURITY CODE -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tv_CardSecurityCode"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/noto_sans"
+            android:hint="Sicherheitscode"
+            android:textColor="@color/buttonsTextColor"
+            android:textColorHint="@color/hintColor"
+            app:layout_constraintEnd_toEndOf="@+id/tv_CardExpiryDate"
+            app:layout_constraintStart_toStartOf="@+id/tv_CardExpiryDate"
+            app:layout_constraintTop_toBottomOf="@+id/tv_CardExpiryDate">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/textInputCardSecurityCode"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/noto_sans"
+                android:inputType="number"
+                android:textColor="@color/buttonsTextColor"
+                android:textColorHint="@color/hintColor" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <!-- POSTAL CODE -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tv_PostalCode"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/noto_sans"
+            android:hint="PLZ"
+            android:textColor="@color/buttonsTextColor"
+            android:textColorHint="@color/hintColor"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="@+id/tv_Adress"
+            app:layout_constraintStart_toStartOf="@+id/tv_Adress"
+            app:layout_constraintTop_toBottomOf="@+id/tv_Adress">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/textInputPostalCode"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/noto_sans"
+                android:inputType="number"
+                android:textColor="@color/buttonsTextColor"
+                android:textColorHint="@color/hintColor" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottomNavView_UserPayment"
+            android:layout_width="0dp"
+            android:layout_height="55dp"
+            android:background="@color/toolbar"
+            app:itemIconTint="@color/buttonsTextColor"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:menu="@menu/bottom_navigation_2"
+            tools:ignore="VisualLintBottomNav">
+
+        </com.google.android.material.bottomnavigation.BottomNavigationView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

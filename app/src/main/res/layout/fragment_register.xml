@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/backgroundColor"
+        >
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:background="@color/toolbar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/tv_toolbarTitelRegister"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="@string/app_name"
+                android:textColor="@color/buttonsTextColor"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                tools:ignore="RtlHardcoded,TextContrastCheck"
+                tools:layout_editor_absoluteX="27dp"
+                tools:layout_editor_absoluteY="8dp" />
+        </androidx.appcompat.widget.Toolbar>
+
+        <ImageView
+            android:id="@+id/appLogoRegister"
+            android:layout_width="95dp"
+            android:layout_height="95dp"
+            android:layout_marginTop="35dp"
+            android:contentDescription="@string/homeLogo"
+            android:src="@drawable/homelogo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar"
+            tools:ignore="ImageContrastCheck" />
+
+        <TextView
+            android:id="@+id/tv_register"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-medium"
+            android:text="@string/registrierenMenu"
+            android:textColor="@color/buttons"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/appLogoRegister"
+            app:layout_constraintStart_toStartOf="@+id/appLogoRegister"
+            app:layout_constraintTop_toBottomOf="@+id/appLogoRegister"
+            tools:ignore="TextContrastCheck" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_newUser"
+            android:layout_width="240dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="85dp"
+            android:backgroundTint="@color/toolbar"
+            android:drawableLeft="@drawable/new_user_svgrepo_com"
+            android:drawablePadding="8dp"
+            android:fontFamily="@font/noto_sans"
+            android:text="@string/newUser"
+            android:textAlignment="viewStart"
+            android:textAllCaps="false"
+            android:textColor="@color/buttonsTextColor"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:cornerRadius="10dp"
+            app:iconTint="@color/buttonsTextColor"
+            app:layout_constraintEnd_toEndOf="@+id/tv_register"
+            app:layout_constraintStart_toStartOf="@+id/tv_register"
+            app:layout_constraintTop_toBottomOf="@+id/tv_register"
+            tools:ignore="RtlHardcoded,TextContrastCheck" />
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_registerFacebook"
+            android:layout_width="240dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:backgroundTint="@color/toolbar"
+            android:drawableLeft="@drawable/facebook_logo_svgrepo_com"
+            android:drawablePadding="8dp"
+            android:fontFamily="@font/noto_sans"
+            android:text="@string/mit_facebook_registrieren"
+            android:textAlignment="viewStart"
+            android:textAllCaps="false"
+            android:textColor="@color/buttonsTextColor"
+            android:textSize="14sp"
+            android:textStyle="bold"
+
+            app:cornerRadius="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/divider"
+            tools:ignore="RtlHardcoded,TextContrastCheck,TextSizeCheck" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_registerGmail"
+            android:layout_width="240dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:backgroundTint="@color/toolbar"
+            android:drawableLeft="@drawable/google_fill_svgrepo_com"
+            android:drawablePadding="8dp"
+            android:fontFamily="@font/noto_sans"
+            android:text="@string/mit_Gmail_registrieren"
+            android:textAlignment="viewStart"
+            android:textAllCaps="false"
+            android:textColor="@color/buttonsTextColor"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:cornerRadius="10dp"
+            app:layout_constraintEnd_toEndOf="@+id/btn_registerFacebook"
+            app:layout_constraintStart_toStartOf="@+id/btn_registerFacebook"
+            app:layout_constraintTop_toBottomOf="@+id/btn_registerFacebook"
+            tools:ignore="RtlHardcoded,TextContrastCheck" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_registerAppleId"
+            android:layout_width="240dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:backgroundTint="@color/toolbar"
+            android:drawableLeft="@drawable/apple_color_svgrepo_com"
+            android:drawablePadding="8dp"
+            android:fontFamily="@font/noto_sans"
+            android:text="@string/mit_Apple_ID_registrieren"
+            android:textAlignment="viewStart"
+            android:textAllCaps="false"
+            android:textColor="@color/buttonsTextColor"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:cornerRadius="10dp"
+            app:layout_constraintEnd_toEndOf="@+id/btn_registerGmail"
+            app:layout_constraintStart_toStartOf="@+id/btn_registerGmail"
+            app:layout_constraintTop_toBottomOf="@+id/btn_registerGmail"
+            tools:ignore="RtlHardcoded,TextContrastCheck,TextSizeCheck" />
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="25dp"
+            android:background="@color/buttons"
+            android:divider="@color/buttons"
+            android:dividerHeight="2dp"
+            app:layout_constraintEnd_toEndOf="@+id/btn_newUser"
+            app:layout_constraintHorizontal_bias="0.503"
+            app:layout_constraintStart_toStartOf="@+id/btn_newUser"
+            app:layout_constraintTop_toBottomOf="@+id/btn_newUser" />
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottomNavView_Register"
+            android:layout_width="0dp"
+            android:layout_height="55dp"
+            android:background="@color/toolbar"
+            app:itemIconTint="@color/buttonsTextColor"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:menu="@menu/bottom_navigation_2"
+            tools:ignore="VisualLintBottomNav">
+
+        </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

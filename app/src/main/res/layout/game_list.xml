@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_margin="8dp"
+    android:backgroundTint="@color/buttons"
+    android:elevation="5dp"
+    app:cardCornerRadius="10dp"
+    app:contentPadding="8dp">
+
+    <data>
+
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView"
+            android:layout_width="match_parent"
+            android:layout_height="275dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/ivGame"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:adjustViewBounds="true"
+                    android:contentDescription="@string/gameImage"
+                    android:scaleType="centerCrop"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageButton
+                    android:id="@+id/btnMarkGameAsFavourite"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_marginEnd="12dp"
+                    android:layout_marginTop="12dp"
+
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/normal_heart_button"
+                    android:background="@android:color/transparent"
+                    />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/llInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="13dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="@+id/btnSaveGame"
+            app:layout_constraintHorizontal_bias="0.51"
+            app:layout_constraintStart_toStartOf="@+id/btnDeleteGame"
+            app:layout_constraintTop_toBottomOf="@+id/btnSaveGame">
+
+            <TextView
+                android:id="@+id/gameUrl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="13dp"
+                android:text="Url"
+                android:textAlignment="center"
+                android:textColor="@color/buttons"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvTitleGame" />
+
+            <TextView
+                android:id="@+id/tv_gameUrl"
+                android:layout_width="360dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginEnd="6dp"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="@+id/gameUrl"
+                app:layout_constraintTop_toBottomOf="@+id/gameUrl" />
+
+            <TextView
+                android:id="@+id/gameDescription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:text="Description"
+
+                android:textColor="@color/buttons"
+                app:layout_constraintStart_toStartOf="@+id/tv_gameUrl"
+                app:layout_constraintTop_toBottomOf="@+id/tv_gameUrl" />
+
+            <TextView
+                android:id="@+id/tv_gameDescription"
+                android:layout_width="360dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="13dp"
+                android:textAlignment="viewStart"
+                android:textColor="@color/white"
+                app:layout_constraintStart_toStartOf="@+id/gameDescription"
+                app:layout_constraintTop_toBottomOf="@+id/gameDescription" />
+            <TextView
+                android:id="@+id/gamePlatform"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:text="Platform"
+                android:textAlignment="center"
+                android:textColor="@color/buttons"
+                app:layout_constraintStart_toStartOf="@+id/tv_gameDescription"
+                app:layout_constraintTop_toBottomOf="@+id/tv_gameDescription" />
+
+            <TextView
+                android:id="@+id/tv_Platform"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                app:layout_constraintStart_toStartOf="@+id/gamePlatform"
+                app:layout_constraintTop_toBottomOf="@+id/gamePlatform" />
+
+            <TextView
+                android:id="@+id/gamePublisher"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:text="Publisher"
+                android:textAlignment="center"
+                android:textColor="@color/buttons"
+                app:layout_constraintStart_toStartOf="@+id/tv_Platform"
+                app:layout_constraintTop_toBottomOf="@+id/tv_Platform" />
+
+            <TextView
+                android:id="@+id/tv_publisher"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                app:layout_constraintStart_toStartOf="@+id/gamePublisher"
+                app:layout_constraintTop_toBottomOf="@+id/gamePublisher" />
+
+            <TextView
+                android:id="@+id/gameReleaseDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="13dp"
+                android:text="Release date"
+                android:textAlignment="center"
+                android:textColor="@color/buttons"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/gamePlatform" />
+
+            <TextView
+                android:id="@+id/tv_releaseDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                app:layout_constraintStart_toStartOf="@+id/gameReleaseDate"
+                app:layout_constraintTop_toBottomOf="@+id/gameReleaseDate" />
+
+
+            <EditText
+                android:id="@+id/tvTitleGame"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="8dp"
+                android:layout_marginTop="52dp"
+                android:layout_weight="1"
+                android:fontFamily="sans-serif-medium"
+                android:importantForAutofill="no"
+                android:minWidth="48dp"
+                android:minHeight="48dp"
+                android:textAlignment="center"
+                android:textColor="@color/buttons"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="@+id/llInput"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintStart_toStartOf="@+id/llInput"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="LabelFor,SpeakableTextPresentCheck,TextFields" />
+
+            <TextView
+                android:id="@+id/tvCategory"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:text="Category"
+                android:textColor="@color/buttons"
+                app:layout_constraintStart_toStartOf="@+id/tv_releaseDate"
+                app:layout_constraintTop_toBottomOf="@+id/tv_releaseDate" />
+
+            <TextView
+                android:id="@+id/tv_category"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                app:layout_constraintStart_toStartOf="@+id/tvCategory"
+                app:layout_constraintTop_toBottomOf="@+id/tvCategory" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ImageButton
+            android:id="@+id/btnSaveGame"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="8dp"
+            android:layout_weight="0"
+            android:background="@color/buttons"
+            app:layout_constraintEnd_toEndOf="@id/cardView"
+            app:layout_constraintTop_toBottomOf="@id/cardView"
+            app:srcCompat="@drawable/round_save_white_18dp"
+            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck"
+            app:tint="@color/com_facebook_blue" />
+
+        <ImageButton
+            android:id="@+id/btnDeleteGame"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="8dp"
+            android:layout_weight="0"
+            android:background="@color/buttons"
+            app:layout_constraintStart_toStartOf="@id/cardView"
+            app:layout_constraintTop_toBottomOf="@id/cardView"
+            app:srcCompat="@drawable/round_delete_white_18dp"
+            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck"
+            app:tint="@color/com_facebook_blue" />
+
+        <TextView
+            android:id="@+id/tv_gameDBid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:textColor="@color/white"
+            android:text="GameId"
+            app:layout_constraintStart_toEndOf="@+id/gameId"
+            app:layout_constraintTop_toTopOf="@+id/gameId" />
+
+        <TextView
+            android:id="@+id/gameId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="100dp"
+            android:text="Game ID"
+            android:textAlignment="center"
+            android:textColor="@color/buttons"
+            app:layout_constraintBottom_toBottomOf="@+id/btnDeleteGame"
+            app:layout_constraintStart_toEndOf="@+id/btnDeleteGame"
+            app:layout_constraintTop_toTopOf="@+id/btnDeleteGame" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

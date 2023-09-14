@@ -1,0 +1,253 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/backgroundColor"
+        tools:context="com.example.zuhauselernen.ui.PaymentFragment">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbarPayment"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginBottom="8dp"
+            android:background="@color/toolbar"
+            app:layout_constraintBottom_toTopOf="@+id/iv_paymentMethod"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/tv_toolbarTitelPayment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginEnd="8dp"
+                android:text="@string/payment"
+                android:textColor="@color/buttonsTextColor"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                tools:ignore="RtlHardcoded,TextContrastCheck"
+                tools:layout_editor_absoluteX="27dp"
+                tools:layout_editor_absoluteY="8dp" />
+
+            <ImageView
+                android:id="@+id/iv_back_payment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_marginStart="8dp"
+                android:contentDescription="@string/back_setting"
+                android:src="@drawable/baseline_arrow_back_ios_24"
+                tools:layout_editor_absoluteX="6dp"
+                app:tint="@color/buttonsTextColor" />
+        </androidx.appcompat.widget.Toolbar>
+
+        <TextView
+            android:id="@+id/tv_paymentTitle"
+            android:layout_width="377dp"
+            android:layout_height="42dp"
+            android:gravity="center"
+            android:text="@string/credit_card"
+            android:textColor="@color/toolbar"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_paymentMethod" />
+
+        <TextView
+            android:id="@+id/tv_cardOwnerLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="45dp"
+            android:text="@string/cardOwner"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/tv_paymentTitle"
+            app:layout_constraintTop_toBottomOf="@+id/tv_paymentTitle" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/textInputCardOwner"
+            android:layout_width="wrap_content"
+            android:layout_height="38dp"
+            android:layout_marginTop="2dp"
+            android:hint="Der Name des Inhabers"
+            android:minWidth="48dp"
+            android:textSize="16sp"
+            android:textColor="@color/yellow"
+            app:layout_constraintStart_toStartOf="@+id/tv_cardOwnerLabel"
+            app:layout_constraintTop_toBottomOf="@+id/tv_cardOwnerLabel"
+            tools:ignore="DuplicateSpeakableTextCheck" />
+
+        <TextView
+            android:id="@+id/tv_cardNumberLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="@string/cardNumber"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/textInputCardOwner"
+            app:layout_constraintTop_toBottomOf="@+id/textInputCardOwner" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/textInputCardNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="38dp"
+            android:layout_marginTop="2dp"
+            android:hint="Die Kartennummer"
+            android:inputType="number"
+            android:minWidth="48dp"
+            android:textSize="16sp"
+            android:textColor="@color/yellow"
+            app:layout_constraintStart_toStartOf="@+id/tv_cardNumberLabel"
+            app:layout_constraintTop_toBottomOf="@+id/tv_cardNumberLabel" />
+
+        <TextView
+            android:id="@+id/tv_cardExpiryDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="@string/cardExpiryDate"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/textInputCardNumber"
+            app:layout_constraintTop_toBottomOf="@+id/textInputCardNumber" />
+
+        <TextView
+            android:id="@+id/tv_cardSecurityCode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="@string/cardSecurityCode"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/editTextExpiryDate"
+            app:layout_constraintTop_toBottomOf="@+id/editTextExpiryDate" />
+
+        <ImageView
+            android:id="@+id/iv_paymentMethod"
+            android:scaleType="center"
+            android:layout_width="377dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbarPayment"
+            tools:src="@tools:sample/avatars" />
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/barrier"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="top"
+            app:constraint_referenced_ids="iv_paymentMethod" />
+
+        <EditText
+            android:id="@+id/editTextExpiryDate"
+            android:layout_width="wrap_content"
+            android:layout_height="38dp"
+            android:layout_marginTop="2dp"
+            android:ems="10"
+            android:hint="Datum des Ablaufs"
+            android:inputType="date"
+            android:textColor="@color/yellow"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@+id/tv_cardExpiryDate"
+            app:layout_constraintTop_toBottomOf="@+id/tv_cardExpiryDate" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/textInputSecurityCode"
+            android:layout_width="wrap_content"
+            android:layout_height="38dp"
+            android:layout_marginTop="2dp"
+            android:hint="Drei stellige Zahl"
+            android:inputType="number"
+            android:minWidth="48dp"
+            android:textColor="@color/yellow"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@+id/tv_cardSecurityCode"
+            app:layout_constraintTop_toBottomOf="@+id/tv_cardSecurityCode" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_paymentFinish"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:backgroundTint="@color/buttons"
+            android:text="@string/forward"
+            android:textAllCaps="false"
+            android:textColor="@color/buttonsTextColorTwo"
+            android:textSize="18sp"
+            app:cornerRadius="10dp"
+            app:layout_constraintBottom_toTopOf="@+id/bottomNavView_UserSubjects"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="TextContrastCheck,VisualLintBounds" />
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyle"
+            android:visibility="gone"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:max="100"
+            android:indeterminate="false"
+            app:layout_constraintBottom_toTopOf="@+id/btn_paymentFinish"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_paymentTitle"
+            android:progressDrawable="@drawable/progress_bar"/>
+
+        <TextView
+            android:id="@+id/percentageText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textColor="@color/buttons"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/progressBar"
+            app:layout_constraintEnd_toEndOf="@+id/progressBar"
+            app:layout_constraintStart_toStartOf="@+id/progressBar"
+            app:layout_constraintTop_toTopOf="@+id/progressBar" />
+
+        <TextView
+            android:id="@+id/tv_UserEmailPayment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="User e-mail"
+            android:textColor="@color/buttonsTextColor"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/tv_paymentTitle"
+            app:layout_constraintStart_toStartOf="@+id/tv_paymentTitle"
+            app:layout_constraintTop_toBottomOf="@+id/tv_paymentTitle" />
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottomNavView_UserSubjects"
+            android:layout_width="0dp"
+            android:layout_height="55dp"
+            android:background="@color/toolbar"
+            app:itemIconTint="@color/buttonsTextColor"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:menu="@menu/bottom_navigation_2"
+            tools:ignore="VisualLintBottomNav">
+
+        </com.google.android.material.bottomnavigation.BottomNavigationView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

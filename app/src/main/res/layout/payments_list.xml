@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/subject_cardView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+    >
+
+        <View
+            android:id="@+id/borderView"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="2dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="2dp"
+            android:background="@drawable/spinner_border"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv_PaymentImage"
+            android:layout_width="65dp"
+            android:layout_height="55dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="27dp"
+            android:layout_marginEnd="8dp"
+            android:contentDescription="@string/paymentImage"
+            android:scaleType="fitXY"
+            android:src="@drawable/credit_card_old"
+            app:layout_constraintBottom_toTopOf="@+id/tv_paymentTitel"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/borderView"
+            app:layout_constraintTop_toTopOf="@id/borderView"
+            tools:ignore="VisualLintBounds,ImageContrastCheck" />
+
+        <TextView
+            android:id="@+id/tv_paymentTitel"
+            android:layout_width="90dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="7dp"
+            android:gravity="center"
+            android:text="@string/credit_card"
+            android:textColor="@color/buttons"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/borderView"
+            app:layout_constraintStart_toStartOf="@+id/borderView"
+            app:layout_constraintTop_toBottomOf="@id/iv_PaymentImage"
+            tools:ignore="TextContrastCheck" />
+
+        <RadioButton
+            android:id="@+id/rb_payment"
+            android:layout_width="39dp"
+            android:layout_height="36dp"
+            android:minWidth="48dp"
+            android:minHeight="48dp"
+            app:layout_constraintStart_toStartOf="@+id/borderView"
+            app:layout_constraintTop_toTopOf="@+id/borderView" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

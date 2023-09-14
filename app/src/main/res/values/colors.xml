@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--Einstellung der Farben für App.Themes-->
+
+    <color name="buttonsTextColor">#FBC02D</color>
+    <color name="buttonsTextColorTwo">#1976D2</color>
+    <color name="textInputColor">#BBB9BC</color>
+    <color name="buttons">#FBB70D</color>
+    <color name="toolbar">#0288D1</color>
+    <color name="backgroundColor">#05679C</color>
+    <color name="hintColor">#FBB70D</color>
+    <color name="buttonSymbolColor">#1976D2</color>
+<color name="black">#070707</color>
+
+    <!--Schon eingestellten Farben-->
+    <color name="colorPrimary">#00796B</color>
+    <color name="colorPrimaryDark">#00796B</color>
+    <color name="colorAccent">#03DAC5</color>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="yellow">#FBC02D</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="red">#F30303</color>
+    <color name="primaryDarkColor">#5d99c6</color>
+    <color name="onSurface">#E0E0E0</color>
+</resources>

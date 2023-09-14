@@ -1,0 +1,152 @@
+Die Logik der Struktur meines Programms:
+1.	EmailFragment:
+    •	Zurück: zum RegisterFragment
+    •	Home: zum HomeFragment
+    •	Logout: das Programm wird beendet.
+    •	Bestätigen: der Nutzer wird in der Datenbank erstellt.
+2.	SettingFragment:
+    •	Home: zum HomeFragment (der Benutzer ist immer noch in der Datenbank).
+    •	Logout:
+             (1)	das Programm wird beendet.
+             (2)	der Nutzer wird von der Datenbank gelöscht.
+3.	SubjectFragment:
+    •	Zurück: zurück zum SettingFragment.
+    •	Home:
+             (1)	Zum HomeFragment.
+             (2)	Der Nutzer ist immer noch in der Datenbank.
+             (3)	Die gewählten Fächer (falls ja) werden gelöscht.
+    •	Logout:
+             (1)	Das Programm wird beendet.
+             (2)	Der Nutzer ist immer noch in der Datenbank.
+             (3)	Die gewählten Fächer (falls ja) werden gelöscht.
+4.	SubscriptionFragment:
+    •	Zurück:
+             (1)	Zum SubjectFragment.
+             (2)	Alle Fächer des Nutzers werden gelöscht.
+             (3)	Die letzte erstellte Rechnung wird gelöscht.
+             (4)	Die zugehörige Zahlungsmethode (falls ausgewählt) wird gelöscht.
+    •	Home:
+             (1)	Zum HomeFragment.
+             (2)	Die gewählten Fächer (die in diesem Fragment gewählt werden) werden gelöscht.
+             (3)	Die letzte erstellte Rechnung wird gelöscht.
+             (4)	Die zugehörige Zahlungsmethode (falls ausgewählt) wird gelöscht.
+    •	Logout:
+             (1)	Das Programm wird beendet.
+             (2)	Die gleichen Aktionen, wie bei Home werden ausgeführt.
+5.	PaymentFragment:
+    •	Zurück:
+             (1)	Zum SubscriptionFragment.
+             (2)	Die schon gewählten Fächer im SubscriptionFragment werden gelöscht.
+             (3)	Die letzte Rechnung wird gelöscht.
+             (4)	Die zugehörige Zahlungsmethode wird gelöscht.
+    •	Home:
+             (1)	Zum HomeFragment
+             (2)	Die gleichen Aktionen wie bei zurück (ab 2.) werden ausgeführt.
+    •	Logout:
+             (1)	Das Programm wird beendet.
+             (2)	Die gleichen Aktionen wie bei zurück (ab 2.) werden ausgeführt.
+    •	Weiter:
+             (1)	Die Zahlungsmethode wird mit den vom Nutzer eingegebenen Informationen aktualisiert.
+6.	UserSubjectsFragment:
+    •	Home: zum HomeFragment.
+    •	Logout: das Programm wird beendet.
+    •	NavDrawer: der NavigationDrawer wird geöffnet.
+7.	UserSubscriptionFragment:
+    •	Zurück:
+        Zu diesem Zeitpunkt werden die ausgewählten Themen erst dann zur Datenbank hinzugefügt, wenn
+        der Benutzer auf „Abonnieren“ klickt.
+             (1)	Deswegen wenn der Nutzer zurück auswählt, werden:
+             (2)	Die letzte Zahlungsmethode (falls gewählt) gelöscht.
+             (3)	Die letzte Rechnung gelöscht.
+             (4)	Zurück zum UserSubjectsFragment navigiert.
+8.	UserPaymentFragment:
+    •	Zurück:
+             (1)	Die schon ausgewählten Fächer im Fragment UserSubscription (sind in temList
+             gespeichert) werden von der Datenbank gelöscht.
+             (2)	Die letzte Zahlungsmethode (falls gewählt) wird gelöscht.
+             (3)	Die letzte Rechnung wird gelöscht.
+             (4)	Es wird zurück zum UserSubscriptionFragment navigiert.
+    •	Home:
+             (1)	Die gleichen Aktionen wie bei Zurück (außer 4) werden ausgeführt.
+             (2)	Es wird zurück zum HomeFragment navigiert.
+
+    •	Logout:
+             (1)	Die gleichen Aktionen wie bei Zurück (außer 4) werden ausgeführt.
+             (2)	Das Programm wird beendet.
+
+
+fun getUserSubjectsByEmail(email: String): MutableList<Subject> {
+        val db = readableDatabase
+        val selection = "$COLUMN_SUBJECT_EMAIL = ?"
+        val selectionArgs = arrayOf(email)
+
+        val cursor = db.query(
+            TABLE_NAME_SUBJECTS,
+            null,
+            selection,
+            selectionArgs,
+            null,
+            null,
+            null
+        )
+        val subjects = mutableListOf<Subject>()
+        if (cursor != null) {
+            while (cursor.moveToNext()) {
+                val subjectIdIndex = cursor.getColumnIndex(COLUMN_SUBJECT_ID)
+                val subjectNameColumnIndex = cursor.getColumnIndex(COLUMN_SUBJECT_NAME)
+                val subjectImageColumnIndex = cursor.getColumnIndex(COLUMN_SUBJECT_IMAGE)
+                val subjectCheckedColumnIndex = cursor.getColumnIndex(COLUMN_SUBJECT_CHECKED)
+                val subjectMonthlyPriceColumnIndex =
+                    cursor.getColumnIndex(COLUMN_SUBJECT_MONTHLY_PRICE)
+                val subjectYearlyPriceColumnIndex =
+                    cursor.getColumnIndex(COLUMN_SUBJECT_YEARLY_PRICE)
+                val subjectMonthlySubscribedColumnIndex =
+                    cursor.getColumnIndex(COLUMN_SUBJECT_MONTHLY_SUBSCRIPTION)
+                val subjectYearlySubscribedColumnIndex =
+                    cursor.getColumnIndex(COLUMN_SUBJECT_YEARLY_SUBSCRIPTION)
+                val subjectInvoiceIdColumnIndex =
+                    cursor.getColumnIndex(COLUMN_SUBJECT_INVOICE_NUMBER)
+                val subjectSubscriptionPriceColumnIndex = cursor.getColumnIndex(
+                    COLUMN_SUBJECT_SUBSCRIPTION_PRICE
+                )
+
+                Log.d("Subject Columns", "subjectIdIndex: $subjectIdIndex")
+                Log.d("Subject Columns", "subjectNameColumnIndex: $subjectNameColumnIndex")
+                // ... Hier können mehr Logs erwähnt werden
+
+                if (subjectNameColumnIndex != -1 && subjectImageColumnIndex != -1 && subjectCheckedColumnIndex != -1 &&
+                    subjectMonthlyPriceColumnIndex != -1 && subjectYearlyPriceColumnIndex != -1 &&
+                    subjectMonthlySubscribedColumnIndex != -1 && subjectYearlySubscribedColumnIndex != -1
+                    && subjectInvoiceIdColumnIndex != -1 && subjectSubscriptionPriceColumnIndex != -1
+                ) {
+                    val subjectId = cursor.getInt(subjectIdIndex)
+                    val subjectName = cursor.getString(subjectNameColumnIndex)
+                    val subjectImage = cursor.getInt(subjectImageColumnIndex)
+                    val isChecked = cursor.getInt(subjectCheckedColumnIndex) == 1
+                    val monthlySubscriptionPrice = cursor.getDouble(subjectMonthlyPriceColumnIndex)
+                    val yearlySubscriptionPrice = cursor.getDouble(subjectYearlyPriceColumnIndex)
+                    val isMonthlySubscribed =
+                        cursor.getInt(subjectMonthlySubscribedColumnIndex) == 1
+                    val isYearlySubscribed = cursor.getInt(subjectYearlySubscribedColumnIndex) == 1
+                    val invoiceId = cursor.getInt(subjectInvoiceIdColumnIndex)
+                    val subscriptionPrice = cursor.getDouble(subjectSubscriptionPriceColumnIndex)
+                    val subject = Subject(
+                        subjectId,
+                        subjectName,
+                        subjectImage,
+                        isChecked,
+                        monthlySubscriptionPrice,
+                        yearlySubscriptionPrice,
+                        isMonthlySubscribed,
+                        isYearlySubscribed,
+                        invoiceId,
+                        subscriptionPrice
+                    )
+                    subjects.add(subject)
+                } else {
+                    /**
+                    Hier kann Log hinzugefügt werden ,falls der Index der Spalte nicht gefunden ist
+                     */
+                }
+            }
+        }

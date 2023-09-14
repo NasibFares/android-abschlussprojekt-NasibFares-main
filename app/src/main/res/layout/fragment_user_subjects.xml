@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:id="@+id/drawer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.fragment.app.FragmentContainerView
+                android:id="@+id/nav_host_fragment"
+                android:name="androidx.navigation.fragment.NavHostFragment"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:defaultNavHost="true"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:navGraph="@navigation/nav_graph" />
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/userSubjects"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/backgroundColor">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbarLogIn"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/toolbar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fabMenu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="0dp"
+                android:backgroundTint="@color/buttonsTextColor"
+                android:clickable="true"
+                android:focusable="true"
+                android:importantForAccessibility="no"
+                android:src="@drawable/baseline_menu_open_24"
+
+                app:fabSize="mini"
+                app:layout_constraintStart_toStartOf="@id/toolbarLogIn"
+                app:layout_constraintTop_toTopOf="@id/toolbarLogIn"
+                app:tint="@color/buttonSymbolColor" />
+
+
+            <TextView
+                android:id="@+id/tv_userEmailUserSubjects"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+
+                android:textColor="@color/buttonsTextColor"
+                android:textSize="15sp"
+                android:textStyle="normal"
+                tools:ignore="RtlHardcoded,TextContrastCheck" />
+
+
+        </androidx.appcompat.widget.Toolbar>
+
+        <ImageView
+            android:id="@+id/appLogoSubscription"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="68dp"
+            android:contentDescription="@string/homeLogo"
+            android:src="@drawable/homelogo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ImageContrastCheck" />
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                app:layout_constraintEnd_toEndOf="@id/appLogoSubscription"
+                app:layout_constraintStart_toStartOf="@id/appLogoSubscription"
+                app:layout_constraintBottom_toTopOf="@id/appLogoSubscription">
+
+                <TextView
+                    android:id="@+id/tv_gamesAdv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:text="@string/advertisement"
+                    android:textColor="@color/buttons"
+                    android:textSize="16sp"
+                    android:textStyle="italic" />
+            </FrameLayout>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_userSubjects"
+            android:layout_width="350dp"
+            android:layout_height="167dp"
+            android:background="@drawable/user_subjects_border"
+            android:orientation="horizontal"
+            android:scrollbars="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintEnd_toEndOf="@+id/tv_pageTitle"
+            app:layout_constraintStart_toStartOf="@+id/tv_pageTitle"
+            app:layout_constraintTop_toBottomOf="@+id/tv_pageTitle"
+            tools:listitem="@layout/user_subject_list" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_userSubjectCategories"
+            android:layout_width="350dp"
+            android:layout_height="295dp"
+            android:background="@drawable/user_subjects_border"
+            android:orientation="vertical"
+            android:scrollbars="vertical"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintEnd_toEndOf="@+id/tv_subjectName"
+            app:layout_constraintStart_toStartOf="@+id/tv_subjectName"
+            app:layout_constraintTop_toBottomOf="@+id/tv_test"
+            tools:listitem="@layout/category_list" />
+
+        <TextView
+            android:id="@+id/tv_test"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:textColor="@color/yellow"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/rv_userSubjects"
+            app:layout_constraintStart_toStartOf="@+id/rv_userSubjects"
+            app:layout_constraintTop_toBottomOf="@+id/rv_userSubjects" />
+
+        <TextView
+            android:id="@+id/tv_subjectName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/subjectTitel_1"
+            android:textColor="@color/buttons"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/rv_userSubjectCategories"
+            app:layout_constraintEnd_toEndOf="@+id/rv_userSubjects"
+            app:layout_constraintStart_toStartOf="@+id/rv_userSubjects"
+            app:layout_constraintTop_toBottomOf="@+id/rv_userSubjects" />
+
+            <com.google.android.material.bottomnavigation.BottomNavigationView
+                android:id="@+id/bottomNavigationView"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:background="@color/toolbar"
+                app:itemIconSize="20dp"
+                app:itemIconTint="@color/buttonsTextColor"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:menu="@menu/bottom_navigation_2"
+                tools:ignore="VisualLintBottomNav">
+
+            </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+        <TextView
+            android:id="@+id/tv_pageTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/mySubjects"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/appLogoSubscription"
+            app:layout_constraintStart_toStartOf="@+id/appLogoSubscription"
+            app:layout_constraintTop_toBottomOf="@+id/appLogoSubscription" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+            <com.google.android.material.navigation.NavigationView
+                android:id="@+id/navigationView"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="start"
+                app:subheaderColor="@color/buttons"
+                app:itemTextColor="@color/white"
+                app:headerLayout="@layout/header_navigation_drawer"
+                android:background="@color/backgroundColor"
+                app:itemIconTint="@color/buttons"
+                app:menu="@menu/navigation_drawer" />
+    </androidx.drawerlayout.widget.DrawerLayout>
+
+</layout>

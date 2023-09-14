@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="CustomTextInputEditText" parent="Widget.MaterialComponents.TextInputEditText.FilledBox">
+        <item name="android:textColor">@color/textInputColor</item>
+        <item name="android:textColorHint">@color/textInputColor</item> <!-- Set hint text color -->
+        <item name="colorControlNormal">@color/textInputColor</item> <!-- Set color of the input box border when not focused -->
+        <item name="colorControlActivated">@color/textInputColor</item> <!-- Set color of the input box border when focused -->
+    </style>
+
+</resources>

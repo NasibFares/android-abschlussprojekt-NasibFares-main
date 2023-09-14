@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/subject_subscription_cardView"
+        android:layout_width="117dp"
+        android:layout_height="160dp"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginEnd="6dp"
+        android:layout_marginBottom="6dp"
+        android:background="@drawable/spinner_border">
+
+        <View
+            android:id="@+id/borderView_subject_subscription"
+            android:layout_width="117dp"
+            android:layout_height="160dp"
+            android:layout_marginStart="2dp"
+
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="2dp"
+            android:alpha="0.40"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="VisualLintBounds" />
+
+        <ImageView
+            android:id="@+id/iv_subjectSubscriptionImage"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:contentDescription="@string/subjectImage"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/borderView_subject_subscription"
+            tools:ignore="VisualLintBounds,ImageContrastCheck"
+            tools:srcCompat="@drawable/subject_image_1" />
+
+        <TextView
+            android:id="@+id/tv_subjectSubscriptionTitel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="70dp"
+            android:layout_marginBottom="50dp"
+            android:fontFamily="sans-serif-medium"
+            android:textColor="@color/white"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/borderView_subject_subscription"
+            app:layout_constraintHorizontal_bias="0.494"
+            app:layout_constraintStart_toStartOf="@+id/borderView_subject_subscription"
+            app:layout_constraintTop_toTopOf="@+id/borderView_subject_subscription"
+            app:layout_constraintVertical_bias="0.506"
+            tools:ignore="TextContrastCheck"
+            tools:text="@string/subjectTitel_1" />
+
+        <CheckBox
+            android:id="@+id/cb_SubjectSubscription"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="4dp"
+            android:minWidth="48dp"
+            android:minHeight="48dp"
+            app:layout_constraintStart_toStartOf="@+id/borderView_subject_subscription"
+            app:layout_constraintTop_toTopOf="@+id/borderView_subject_subscription" />
+
+        <TextView
+            android:id="@+id/tv_monthlyPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:layout_marginStart="2dp"
+            android:fontFamily="sans-serif-light"
+            android:gravity="center_vertical"
+            android:text="price"
+            android:textColor="@color/buttons"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/rg_Subscription"
+            app:layout_constraintTop_toTopOf="@+id/rg_Subscription" />
+
+        <TextView
+            android:id="@+id/tv_yearlyPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:layout_marginStart="2dp"
+            android:fontFamily="sans-serif-light"
+            android:gravity="center_vertical"
+            android:text="price"
+            android:textColor="@color/buttons"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/rg_Subscription"
+            app:layout_constraintStart_toEndOf="@+id/rg_Subscription"
+
+            />
+
+        <TextView
+            android:id="@+id/tv_monthlyPriceLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:layout_marginStart="6dp"
+            android:fontFamily="sans-serif-light"
+            android:gravity="center_vertical"
+            android:text="/Monat"
+            android:textColor="@color/buttons"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_currency"
+            app:layout_constraintStart_toEndOf="@+id/tv_monthlyPrice"
+            app:layout_constraintTop_toTopOf="@+id/tv_currency" />
+
+        <TextView
+            android:id="@+id/tv_yearlyPriceLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:layout_marginStart="6dp"
+            android:fontFamily="sans-serif-light"
+            android:gravity="center_vertical"
+            android:includeFontPadding="true"
+            android:text="/Jahr"
+            android:textColor="@color/buttons"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_Currency"
+            app:layout_constraintStart_toEndOf="@+id/tv_yearlyPrice"
+            app:layout_constraintTop_toTopOf="@+id/tv_Currency" />
+
+        <TextView
+            android:id="@+id/tv_currency"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:fontFamily="sans-serif-light"
+            android:text="€"
+            android:textColor="@color/buttons"
+            android:textSize="12sp"
+            android:gravity="center_vertical"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_monthlyPrice"
+            app:layout_constraintStart_toEndOf="@+id/tv_monthlyPrice"
+            app:layout_constraintTop_toTopOf="@+id/tv_monthlyPrice"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/tv_Currency"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:text="€"
+            android:textColor="@color/buttons"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:gravity="center_vertical"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_yearlyPrice"
+            app:layout_constraintStart_toEndOf="@+id/tv_yearlyPrice"
+            app:layout_constraintTop_toTopOf="@+id/tv_yearlyPrice"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <RadioGroup
+            android:id="@+id/rg_Subscription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginBottom="6dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="@id/borderView_subject_subscription"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_subjectSubscriptionTitel">
+
+            <RadioButton
+                android:id="@+id/rb_monthly"
+                android:layout_width="30dp"
+                android:layout_height="25dp"
+                android:checked="false"
+                 />
+
+            <RadioButton
+                android:id="@+id/rb_yearly"
+                android:layout_width="30dp"
+                android:layout_height="25dp"
+                android:checked="false"
+                />
+        </RadioGroup>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

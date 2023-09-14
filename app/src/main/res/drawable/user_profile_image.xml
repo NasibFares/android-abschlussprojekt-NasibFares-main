@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Background - Circular User Photo -->
+    <item>
+        <shape android:shape="oval">
+            <solid android:color="@color/com_facebook_blue" />
+        </shape>
+    </item>
+    <!-- Foreground - Icon -->
+    <item
+        android:drawable="@drawable/baseline_person_24"
+        android:gravity="center"
+        android:left="10dp"
+        android:right="10dp"
+        android:top="10dp"
+        android:bottom="10dp" />
+</layer-list>

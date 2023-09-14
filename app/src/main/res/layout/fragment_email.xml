@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/backgroundColor"
+        tools:context=".ui.EmailFragment">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@color/toolbar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/tv_toolbarTitelEmail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="@string/newUser"
+                android:textColor="@color/buttonsTextColor"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                tools:ignore="RtlHardcoded,TextContrastCheck"
+                />
+            <ImageView
+                android:id="@+id/iv_back_email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/baseline_arrow_back_ios_24"
+                android:layout_gravity="start"
+                android:layout_marginStart="8dp"
+                tools:layout_editor_absoluteX="6dp"
+                android:contentDescription="@string/backEmail"
+                app:tint="@color/buttonsTextColor" />
+        </androidx.appcompat.widget.Toolbar>
+
+        <ImageView
+            android:id="@+id/appLogoEmail"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="25dp"
+            android:contentDescription="@string/homeLogo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar"
+            app:srcCompat="@drawable/homelogo"
+            tools:ignore="ImageContrastCheck" />
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/firstNameLabel"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="55dp"
+            android:hint="Vorname"
+            android:fontFamily="@font/noto_sans"
+            android:textColor="@color/buttonsTextColor"
+            android:textColorHint="@color/hintColor"
+            app:layout_constraintEnd_toEndOf="@+id/appLogoEmail"
+            app:layout_constraintStart_toStartOf="@+id/appLogoEmail"
+            app:layout_constraintTop_toBottomOf="@+id/appLogoEmail">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/firstName"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/noto_sans"
+                android:inputType="text"
+                android:textColorHint="@color/hintColor"
+                android:textColor="@color/buttonsTextColor" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/lastNameLabel"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:hint="Nachname"
+            android:fontFamily="@font/noto_sans"
+            android:textColor="@color/buttonsTextColor"
+            android:textColorHint="@color/hintColor"
+            app:layout_constraintEnd_toEndOf="@+id/firstNameLabel"
+            app:layout_constraintStart_toStartOf="@+id/firstNameLabel"
+            app:layout_constraintTop_toBottomOf="@+id/firstNameLabel">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/lastName"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/noto_sans"
+                android:textColor="@color/buttonsTextColor"
+                android:inputType="text" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/eMailLabel"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:hint="E-mail Adresse"
+            android:fontFamily="@font/noto_sans"
+            android:textColor="@color/buttonsTextColor"
+            android:textColorHint="@color/hintColor"
+            app:layout_constraintEnd_toEndOf="@+id/lastNameLabel"
+            app:layout_constraintStart_toStartOf="@+id/lastNameLabel"
+            app:layout_constraintTop_toBottomOf="@+id/lastNameLabel">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/eMailAdresse"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/noto_sans"
+                android:textColor="@color/buttonsTextColor"
+                android:inputType="textEmailAddress" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/passwordLabel"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:hint="Kennwort"
+            android:fontFamily="@font/noto_sans"
+            android:textColor="@color/buttonsTextColor"
+            android:textColorHint="@color/hintColor"
+            app:layout_constraintEnd_toEndOf="@+id/eMailLabel"
+            app:layout_constraintStart_toStartOf="@+id/eMailLabel"
+            app:layout_constraintTop_toBottomOf="@+id/eMailLabel">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/password"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/noto_sans"
+                android:textColor="@color/buttonsTextColor"
+                android:inputType="textPassword" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/passwordRepeatLabel"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:hint="Kennwort Bestätigung"
+            android:fontFamily="@font/noto_sans"
+            android:textColorHint="@color/hintColor"
+            app:layout_constraintEnd_toEndOf="@+id/passwordLabel"
+            app:layout_constraintStart_toStartOf="@+id/passwordLabel"
+            app:layout_constraintTop_toBottomOf="@+id/passwordLabel">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/passwordRepeat"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/noto_sans"
+                android:textColor="@color/buttonsTextColor"
+                android:inputType="textPassword" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/confirmEmail"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:backgroundTint="@color/buttons"
+            android:fontFamily="@font/noto_sans"
+            android:text="@string/confirm"
+            android:textAllCaps="false"
+            android:textColor="@color/buttonsTextColorTwo"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:cornerRadius="10dp"
+            app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
+            app:layout_constraintEnd_toEndOf="@+id/passwordRepeatLabel"
+            app:layout_constraintStart_toStartOf="@+id/passwordRepeatLabel"
+            tools:ignore="TextContrastCheck" />
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottomNavigationView"
+            android:layout_width="0dp"
+            android:layout_height="55dp"
+            android:background="@color/toolbar"
+            app:itemIconTint="@color/buttonsTextColor"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:menu="@menu/bottom_navigation_2"
+            tools:ignore="VisualLintBottomNav">
+
+        </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

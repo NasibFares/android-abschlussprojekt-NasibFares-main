@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/loginConstraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/backgroundColor"
+        tools:context=".ui.LoginFragment">
+
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbarLogIn"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/toolbar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/tv_toolbarTitelEmail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="@string/app_name"
+                android:textColor="@color/buttonsTextColor"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                tools:ignore="RtlHardcoded,TextContrastCheck" />
+        </androidx.appcompat.widget.Toolbar>
+
+        <ImageView
+            android:id="@+id/appLogoLogIn"
+            android:layout_width="95dp"
+            android:layout_height="95dp"
+            android:layout_marginTop="35dp"
+            android:contentDescription="@string/homeLogo"
+            android:src="@drawable/homelogo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbarLogIn"
+            tools:ignore="ImageContrastCheck" />
+        <TextView
+            android:id="@+id/tv_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-medium"
+            android:text="@string/login"
+            android:textColor="@color/buttons"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/appLogoLogIn"
+            app:layout_constraintStart_toStartOf="@+id/appLogoLogIn"
+            app:layout_constraintTop_toBottomOf="@+id/appLogoLogIn"
+            tools:ignore="TextContrastCheck" />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/accountLogin"
+            android:layout_width="285dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="35dp"
+            android:backgroundTint="@color/toolbar"
+            android:clickable="true"
+            android:drawableLeft="@drawable/user_svgrepo_com"
+            android:drawablePadding="8dp"
+            android:fontFamily="@font/noto_sans"
+            android:text="@string/accountLogin"
+            android:textAlignment="viewStart"
+            android:textAllCaps="false"
+            android:textColor="@color/buttonsTextColor"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:cornerRadius="10dp"
+            app:layout_constraintEnd_toEndOf="@+id/tv_login"
+            app:layout_constraintStart_toStartOf="@+id/tv_login"
+            app:layout_constraintTop_toBottomOf="@+id/tv_login"
+            tools:ignore="RtlHardcoded,TextContrastCheck" />
+
+        <LinearLayout
+            android:id="@+id/logInEmail"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="@+id/accountLogin"
+            app:layout_constraintStart_toStartOf="@+id/accountLogin"
+            app:layout_constraintTop_toBottomOf="@id/accountLogin">
+
+            <EditText
+                android:id="@+id/eMailAdress"
+                android:layout_width="285dp"
+                android:layout_height="48dp"
+                android:ems="10"
+                android:hint="@string/emailLogInHint"
+                android:inputType="textEmailAddress"
+                android:textColor="@color/buttons"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/accountLogin"
+                app:layout_constraintStart_toStartOf="@+id/accountLogin"
+                app:layout_constraintTop_toBottomOf="@+id/accountLogin"
+                tools:ignore="TextContrastCheck" />
+
+            <EditText
+                android:id="@+id/emailPassword"
+                android:layout_width="285dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:hint="@string/password"
+                android:inputType="textPassword"
+                android:textColor="@color/buttons"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/eMailAdress"
+                app:layout_constraintStart_toStartOf="@+id/eMailAdress"
+                app:layout_constraintTop_toBottomOf="@+id/eMailAdress"
+                tools:ignore="TextContrastCheck"
+                />
+        </LinearLayout>
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/facebookLogin"
+            android:layout_width="285dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:backgroundTint="@color/toolbar"
+            android:clickable="true"
+            android:drawableLeft="@drawable/facebook_logo_svgrepo_com"
+            android:drawablePadding="8dp"
+            android:textAlignment="viewStart"
+            android:fontFamily="@font/noto_sans"
+            android:text="@string/mit_facebook_registrieren"
+            android:textColor="@color/buttonsTextColor"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:cornerRadius="10dp"
+            app:layout_constraintEnd_toEndOf="@+id/logInEmail"
+            app:layout_constraintStart_toStartOf="@+id/logInEmail"
+            app:layout_constraintTop_toBottomOf="@+id/logInEmail" />
+
+        <LinearLayout
+            android:id="@+id/logInFacebook"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="@+id/facebookLogin"
+            app:layout_constraintStart_toStartOf="@+id/facebookLogin"
+            app:layout_constraintTop_toBottomOf="@+id/facebookLogin">
+            <EditText
+                android:id="@+id/facebookId"
+                android:layout_width="300dp"
+                android:layout_height="48dp"
+                android:ems="10"
+                android:hint="@string/facebookLogInHint"
+                android:inputType="textEmailAddress"
+                android:textColor="@color/buttons"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/facebookLogin"
+                app:layout_constraintStart_toStartOf="@+id/facebookLogin"
+                app:layout_constraintTop_toBottomOf="@+id/facebookLogin"
+                tools:ignore="TextContrastCheck" />
+            <EditText
+                android:id="@+id/facebookPassword"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:hint="@string/password"
+                android:inputType="textPassword"
+                android:textColor="@color/buttons"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/eMailAdress"
+                app:layout_constraintStart_toStartOf="@+id/eMailAdress"
+                app:layout_constraintTop_toBottomOf="@+id/eMailAdress"
+                tools:ignore="TextContrastCheck" />
+        </LinearLayout>
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/gMailLogin"
+            android:layout_width="285dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:backgroundTint="@color/toolbar"
+            android:clickable="true"
+            android:drawableLeft="@drawable/google_fill_svgrepo_com"
+            android:drawablePadding="8dp"
+            app:cornerRadius="10dp"
+            android:fontFamily="@font/noto_sans"
+            android:textAlignment="viewStart"
+            android:text="@string/mit_Gmail_registrieren"
+            android:textColor="@color/buttonsTextColor"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/logInFacebook"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/logInFacebook"
+            app:layout_constraintTop_toBottomOf="@+id/logInFacebook" />
+
+        <LinearLayout
+            android:id="@+id/logInGmail"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="@+id/gMailLogin"
+            app:layout_constraintStart_toStartOf="@+id/gMailLogin"
+            app:layout_constraintTop_toBottomOf="@+id/gMailLogin">
+            <EditText
+                android:id="@+id/gMailAdress"
+                android:layout_width="285dp"
+                android:layout_height="48dp"
+                android:autofillHints=""
+                android:ems="10"
+                android:hint="@string/gmailLogInHint"
+                android:inputType="textEmailAddress"
+                android:textColor="@color/buttons"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/gMailLogin"
+                app:layout_constraintStart_toStartOf="@+id/gMailLogin"
+                app:layout_constraintTop_toBottomOf="@+id/gMailLogin"
+                tools:ignore="TextContrastCheck" />
+            <EditText
+                android:id="@+id/gMailPassword"
+                android:layout_width="285dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:hint="@string/password"
+                android:inputType="textPassword"
+                android:textColor="@color/buttons"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/eMailAdress"
+                app:layout_constraintStart_toStartOf="@+id/eMailAdress"
+                app:layout_constraintTop_toBottomOf="@+id/eMailAdress"
+                tools:ignore="TextContrastCheck" />
+        </LinearLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/appleLogin"
+            android:layout_width="285dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:backgroundTint="@color/toolbar"
+            android:clickable="true"
+            android:drawableLeft="@drawable/apple_color_svgrepo_com"
+            android:drawablePadding="8dp"
+            android:fontFamily="@font/noto_sans"
+            android:text="@string/mit_Apple_ID_registrieren"
+            android:textAlignment="viewStart"
+            android:textColor="@color/buttonsTextColor"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:cornerRadius="10dp"
+            app:layout_constraintEnd_toEndOf="@+id/logInGmail"
+            app:layout_constraintHorizontal_bias="0.503"
+            app:layout_constraintStart_toStartOf="@+id/logInGmail"
+            app:layout_constraintTop_toBottomOf="@+id/logInGmail" />
+
+        <LinearLayout
+            android:id="@+id/logInApple"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="@+id/appleLogin"
+            app:layout_constraintStart_toStartOf="@+id/appleLogin"
+            app:layout_constraintTop_toBottomOf="@+id/appleLogin">
+            <EditText
+                android:id="@+id/appleId"
+                android:layout_width="285dp"
+                android:layout_height="48dp"
+                android:autofillHints=""
+                android:ems="10"
+                android:hint="@string/appleIdLogInHint"
+                android:inputType="textEmailAddress"
+                android:textColor="@color/buttons"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/appleLogin"
+                app:layout_constraintStart_toStartOf="@+id/appleLogin"
+                app:layout_constraintTop_toBottomOf="@+id/appleLogin"
+                tools:ignore="TextContrastCheck" />
+            <EditText
+                android:id="@+id/applePassword"
+                android:layout_width="285dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:hint="@string/password"
+                android:inputType="textPassword"
+                android:textColor="@color/buttons"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/eMailAdress"
+                app:layout_constraintStart_toStartOf="@+id/eMailAdress"
+                app:layout_constraintTop_toBottomOf="@+id/eMailAdress"
+                tools:ignore="TextContrastCheck" />
+        </LinearLayout>
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/confirmLogIn"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="45dp"
+            android:backgroundTint="@color/buttons"
+            android:text="@string/confirm"
+            android:textAllCaps="false"
+            android:textColor="@color/buttonsTextColorTwo"
+            android:textSize="18sp"
+            app:cornerRadius="10dp"
+            app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="TextContrastCheck" />
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottomNavigationView"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:background="@color/toolbar"
+            app:itemIconTint="@color/buttonsTextColor"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:menu="@menu/bottom_navigation_2">
+
+        </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+
+
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

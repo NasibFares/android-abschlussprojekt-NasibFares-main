@@ -1,0 +1,304 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/backgroundColor"
+        tools:context="com.example.zuhauselernen.ui.UserSettingFragment">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbarUserSetting"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@color/toolbar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/tv_toolbarTitelUserSetting"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginEnd="8dp"
+                android:text="@string/userSetting"
+                android:textColor="@color/buttonsTextColor"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                tools:ignore="RtlHardcoded,TextContrastCheck"
+                tools:layout_editor_absoluteX="27dp"
+                tools:layout_editor_absoluteY="8dp" />
+
+            <ImageView
+                android:id="@+id/iv_back_setting"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_marginStart="8dp"
+                android:contentDescription="@string/back_setting"
+                android:src="@drawable/baseline_arrow_back_ios_24"
+                tools:layout_editor_absoluteX="6dp"
+                app:tint="@color/buttonsTextColor" />
+        </androidx.appcompat.widget.Toolbar>
+
+        <ImageView
+            android:id="@+id/iv_userProfileImage_Setting"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_marginTop="32dp"
+            android:importantForAccessibility="no"
+            android:src="@drawable/baseline_person_24"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbarUserSetting"
+           />
+
+        <TableLayout
+            android:id="@+id/tableLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="75dp"
+            android:padding="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_userProfileImage_Setting">
+
+            <!-- Vorname -->
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/tv_firstName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:gravity="center_vertical"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="32dp"
+                    android:textColor="@color/buttonsTextColor"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:text="@string/firstName"/>
+
+                <EditText
+                    android:id="@+id/editTextUserFirstName"
+                    android:hint="Ihr Vorname"
+                    app:layout_constraintBottom_toBottomOf="@id/tv_firstName"
+                    app:layout_constraintStart_toEndOf="@id/tv_firstName"
+                    app:layout_constraintTop_toTopOf="@id/tv_firstName"
+                    android:inputType="text"
+                    android:layout_width="200dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center_vertical"
+                    android:layout_marginStart="10dp"
+                    android:textColor="@color/buttonsTextColor"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    />
+            </TableRow>
+
+            <!-- Nachname -->
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/tv_lastName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:gravity="center_vertical"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="32dp"
+                    android:textColor="@color/buttonsTextColor"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:text="@string/lastName"
+
+                    />
+
+                <EditText
+                    android:id="@+id/editTextUserLastName"
+                    android:hint="Ihr Nachname"
+                    android:inputType="text"
+                    app:layout_constraintStart_toStartOf="@+id/tv_lastName"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_lastName"
+                    android:layout_width="200dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center_vertical"
+                    android:layout_marginStart="10dp"
+                    android:textColor="@color/buttonsTextColor"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    />
+            </TableRow>
+            <!-- Kennwort -->
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/tv_password"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:gravity="center_vertical"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="32dp"
+                    android:textColor="@color/buttonsTextColor"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:text="@string/password"
+                    />
+
+                <EditText
+                    android:id="@+id/editTextUserPassword"
+                    android:hint="Ihr Kennwort"
+                    android:inputType="textPassword"
+                    app:layout_constraintStart_toStartOf="@+id/tv_password"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_password"
+                    android:layout_width="200dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center_vertical"
+                    android:layout_marginStart="10dp"
+                    android:textColor="@color/buttonsTextColor"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                     />
+            </TableRow>
+            <!-- Bestätigung des Kennworts -->
+            <TableRow>
+                <TextView
+                    android:id="@+id/tv_confirmPassword"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:gravity="center_vertical"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="32dp"
+                    android:textColor="@color/buttonsTextColor"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:text="@string/password"
+                    />
+                <EditText
+                    android:id="@+id/editTextConfirmUserPassword"
+                    android:hint="Ihr Kennwort Bestätigung"
+
+                    android:inputType="textPassword"
+                    app:layout_constraintStart_toStartOf="@+id/tv_password"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_password"
+                    android:layout_width="200dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center_vertical"
+                    android:layout_marginStart="10dp"
+                    android:textColor="@color/buttonsTextColor"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    />
+            </TableRow>
+
+            <!-- Land -->
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/tv_spinnerLandTitel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:gravity="center_vertical"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="32dp"
+                    android:textColor="@color/buttonsTextColor"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:text="@string/chooseLand"
+                    />
+
+                <Spinner
+                    android:id="@+id/spinner_land"
+                    android:layout_width="200dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="10dp"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/buttonsTextColor"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+            </TableRow>
+            <!-- Stadt -->
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/tv_spinnerCityTitel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:gravity="center_vertical"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="32dp"
+                    android:textColor="@color/buttonsTextColor"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:text="@string/chooseCity"
+                    />
+
+                <Spinner
+                    android:id="@+id/spinner_city"
+                    android:layout_width="200dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center_vertical"
+                    android:layout_marginStart="10dp"
+                    android:textColor="@color/buttonsTextColor"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+            </TableRow>
+        </TableLayout>
+
+        <TextView
+            android:id="@+id/tv_EmailUserSetting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="TextView"
+            android:textColor="@color/buttons"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/iv_userProfileImage_Setting"
+            app:layout_constraintStart_toStartOf="@+id/iv_userProfileImage_Setting"
+            app:layout_constraintTop_toBottomOf="@+id/iv_userProfileImage_Setting" />
+
+        <ImageButton
+            android:id="@+id/btn_save"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="95dp"
+            android:layout_marginBottom="45dp"
+            android:background="@color/buttons"
+            android:scaleType="centerInside"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@drawable/baseline_edit_24"
+            app:tint="@color/buttonsTextColorTwo"
+            tools:ignore="ContentDescription" />
+
+        <ImageButton
+            android:id="@+id/btn_cancel"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginEnd="95dp"
+            android:layout_marginBottom="45dp"
+            android:background="@color/buttons"
+            android:contentDescription="TODO"
+            android:scaleType="centerInside"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:srcCompat="@drawable/baseline_cancel_24"
+            app:tint="@color/buttonsTextColorTwo"
+            tools:ignore="ContentDescription,DuplicateSpeakableTextCheck" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

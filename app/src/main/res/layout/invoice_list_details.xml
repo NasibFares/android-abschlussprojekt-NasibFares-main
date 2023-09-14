@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/subject_card"
+        android:layout_width="300dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:backgroundTint="@color/buttons"
+        app:cardElevation="5dp"
+
+        app:cardPreventCornerOverlap="false">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/subject_layout"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_gravity="center">
+
+
+            <ImageView
+                android:id="@+id/iv_SubscriptionSubjectImage"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:layout_marginEnd="27dp"
+                android:layout_marginStart="2dp"
+                android:layout_marginTop="2dp"
+                app:layout_constraintEnd_toStartOf="@+id/tv_SubscriptionTypeTitle"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:srcCompat="@drawable/subject_image_1" />
+
+            <TextView
+                android:id="@+id/tv_SubjectName"
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:background="@color/com_facebook_blue"
+                android:gravity="center"
+                android:textColor="@color/buttons"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:text="@string/subjectTitel_1" />
+
+            <TextView
+                android:id="@+id/tv_SubscriptionTypeTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:text="Abonnementtyp:"
+                android:textColor="@color/com_facebook_blue"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/iv_SubscriptionSubjectImage"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_SubscriptionType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="TextView"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="@color/com_facebook_blue"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_SubscriptionTypeTitle"
+                app:layout_constraintStart_toEndOf="@+id/tv_SubscriptionTypeTitle"
+                app:layout_constraintTop_toTopOf="@+id/tv_SubscriptionTypeTitle" />
+
+            <TextView
+                android:id="@+id/tv_SubscriptionPriceTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:text="Preis:"
+                android:textColor="@color/com_facebook_blue"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/tv_SubscriptionTypeTitle"
+                app:layout_constraintTop_toBottomOf="@+id/tv_SubscriptionTypeTitle" />
+
+            <TextView
+                android:id="@+id/tv_SubscriptionPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:text="TextView"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="@color/com_facebook_blue"
+                app:layout_constraintEnd_toEndOf="@+id/tv_SubscriptionType"
+                app:layout_constraintStart_toStartOf="@+id/tv_SubscriptionType"
+                app:layout_constraintTop_toBottomOf="@+id/tv_SubscriptionType" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="€"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="@color/toolbar"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_SubscriptionPrice"
+                app:layout_constraintStart_toEndOf="@+id/tv_SubscriptionPrice"
+                app:layout_constraintTop_toTopOf="@+id/tv_SubscriptionPrice" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+</layout>

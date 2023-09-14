@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/backgroundColor"
+        tools:context=".ui.SettingFragment">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbarSetting"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@color/toolbar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/tv_toolbarTitelSetting"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="@string/setting"
+                android:textColor="@color/buttonsTextColor"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:layout_marginEnd="8dp"
+                tools:ignore="RtlHardcoded,TextContrastCheck"
+                tools:layout_editor_absoluteX="27dp"
+                tools:layout_editor_absoluteY="8dp" />
+
+        </androidx.appcompat.widget.Toolbar>
+
+        <ImageView
+            android:id="@+id/appLogoSetting"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="25dp"
+            android:contentDescription="@string/homeLogo"
+            android:src="@drawable/homelogo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbarSetting"
+            tools:ignore="ImageContrastCheck" />
+
+        <TextView
+            android:id="@+id/tv_spinnerLandTitel"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:padding="8dp"
+            android:text="@string/chooseLand"
+            android:textAlignment="viewStart"
+            android:textColor="@color/buttons"
+            android:textStyle="bold"
+
+            app:layout_constraintEnd_toEndOf="@+id/appLogoSetting"
+            app:layout_constraintStart_toStartOf="@+id/appLogoSetting"
+            app:layout_constraintTop_toBottomOf="@+id/appLogoSetting"
+            tools:ignore="TextContrastCheck" />
+
+        <Spinner
+            android:id="@+id/spinner_land"
+            android:layout_width="300dp"
+            android:layout_height="48dp"
+            android:background="@drawable/spinner_border"
+            android:minHeight="48dp"
+            app:layout_constraintEnd_toEndOf="@+id/tv_spinnerLandTitel"
+            app:layout_constraintHorizontal_bias="0.504"
+            app:layout_constraintStart_toStartOf="@+id/tv_spinnerLandTitel"
+            app:layout_constraintTop_toBottomOf="@+id/tv_spinnerLandTitel"
+            tools:ignore="DuplicateSpeakableTextCheck" />
+
+        <TextView
+            android:id="@+id/tv_spinnerCityTitel"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:padding="8dp"
+            android:text="@string/chooseCity"
+            android:textAlignment="viewStart"
+            android:textColor="@color/buttons"
+            android:textStyle="bold"
+
+            app:layout_constraintEnd_toEndOf="@+id/spinner_land"
+            app:layout_constraintStart_toStartOf="@+id/spinner_land"
+            app:layout_constraintTop_toBottomOf="@+id/spinner_land"
+            tools:ignore="TextContrastCheck" />
+
+        <Spinner
+            android:id="@+id/spinner_city"
+            android:layout_width="300dp"
+            android:layout_height="48dp"
+            android:background="@drawable/spinner_border"
+            android:minHeight="48dp"
+            app:layout_constraintEnd_toEndOf="@+id/tv_spinnerCityTitel"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/tv_spinnerCityTitel"
+            app:layout_constraintTop_toBottomOf="@+id/tv_spinnerCityTitel" />
+
+        <TextView
+            android:id="@+id/tv_spinnerReasonTitel"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:padding="8dp"
+            android:text="@string/chooseReason"
+            android:textAlignment="viewStart"
+            android:textColor="@color/buttons"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/spinner_city"
+            app:layout_constraintStart_toStartOf="@+id/spinner_city"
+            app:layout_constraintTop_toBottomOf="@+id/spinner_city"
+            tools:ignore="TextContrastCheck" />
+
+        <Spinner
+            android:id="@+id/spinner_reason"
+            android:layout_width="300dp"
+            android:layout_height="48dp"
+            android:background="@drawable/spinner_border"
+            android:minHeight="48dp"
+            app:layout_constraintEnd_toEndOf="@+id/tv_spinnerReasonTitel"
+            app:layout_constraintStart_toStartOf="@+id/tv_spinnerReasonTitel"
+            app:layout_constraintTop_toBottomOf="@+id/tv_spinnerReasonTitel" />
+
+        <TextView
+            android:id="@+id/tv_spinnerSchoolTypeTitel"
+            android:layout_width="300dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="8dp"
+            android:padding="8dp"
+            android:text="@string/chooseSchool"
+            android:textAlignment="viewStart"
+            android:textColor="@color/buttons"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/spinner_reason"
+            app:layout_constraintStart_toStartOf="@+id/spinner_reason"
+            app:layout_constraintTop_toBottomOf="@+id/spinner_reason"
+            tools:ignore="TextContrastCheck" />
+
+        <Spinner
+            android:id="@+id/spinner_schoolType"
+            android:layout_width="300dp"
+            android:layout_height="48dp"
+            android:background="@drawable/spinner_border"
+            android:minHeight="48dp"
+            app:layout_constraintEnd_toEndOf="@+id/tv_spinnerSchoolTypeTitel"
+            app:layout_constraintStart_toStartOf="@+id/tv_spinnerSchoolTypeTitel"
+            app:layout_constraintTop_toBottomOf="@+id/tv_spinnerSchoolTypeTitel" />
+
+        <TextView
+            android:id="@+id/tv_spinnerLevelGradeTitel"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:padding="8dp"
+            android:text="@string/chooseClass"
+            android:textAlignment="viewStart"
+            android:textColor="@color/buttons"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/spinner_schoolType"
+            app:layout_constraintStart_toStartOf="@+id/spinner_schoolType"
+            app:layout_constraintTop_toBottomOf="@+id/spinner_schoolType"
+            tools:ignore="TextContrastCheck" />
+
+        <Spinner
+            android:id="@+id/spinner_levelGrade"
+            android:layout_width="300dp"
+            android:layout_height="48dp"
+            android:background="@drawable/spinner_border"
+            android:minHeight="48dp"
+            app:layout_constraintEnd_toEndOf="@+id/tv_spinnerLevelGradeTitel"
+            app:layout_constraintStart_toStartOf="@+id/tv_spinnerLevelGradeTitel"
+            app:layout_constraintTop_toBottomOf="@+id/tv_spinnerLevelGradeTitel" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_continueSetting"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:backgroundTint="@color/buttons"
+            android:fontFamily="@font/abel"
+            android:text="@string/forward"
+            android:textAllCaps="false"
+            android:textColor="@color/buttonsTextColorTwo"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:cornerRadius="10dp"
+            app:layout_constraintBottom_toTopOf="@+id/bottomNavView_Setting"
+            app:layout_constraintEnd_toEndOf="@+id/spinner_levelGrade"
+            app:layout_constraintStart_toStartOf="@+id/spinner_levelGrade"
+            tools:ignore="TextContrastCheck" />
+
+        <TextView
+            android:id="@+id/tv_userEmailSetting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/buttonsTextColor"
+            android:textStyle="bold"
+            android:layout_marginTop="1dp"
+            android:text="@string/emailSettingSection"
+            app:layout_constraintEnd_toEndOf="@+id/appLogoSetting"
+            app:layout_constraintStart_toStartOf="@+id/appLogoSetting"
+            app:layout_constraintTop_toBottomOf="@+id/appLogoSetting" />
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottomNavView_Setting"
+            android:layout_width="0dp"
+            android:layout_height="55dp"
+            android:background="@color/toolbar"
+            app:itemIconTint="@color/buttonsTextColor"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:menu="@menu/bottom_navigation_2"
+            tools:ignore="VisualLintBottomNav">
+
+        </com.google.android.material.bottomnavigation.BottomNavigationView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

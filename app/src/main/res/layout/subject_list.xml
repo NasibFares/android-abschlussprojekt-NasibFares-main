@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/subject_cardView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        >
+        <View
+            android:id="@+id/borderView"
+            android:layout_width="98dp"
+            android:layout_height="101dp"
+            android:layout_marginStart="2dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="2dp"
+            android:background="@drawable/spinner_border"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv_subjectImage"
+            android:layout_width="44dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:contentDescription="@string/subjectImage"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.673"
+            app:layout_constraintStart_toStartOf="@id/borderView"
+            app:layout_constraintTop_toTopOf="@id/borderView"
+            tools:ignore="VisualLintBounds,ImageContrastCheck"
+            tools:srcCompat="@drawable/subject_image_1" />
+
+        <TextView
+            android:id="@+id/tv_subjectTitel"
+            android:layout_width="wrap_content"
+            android:layout_height="18dp"
+            android:layout_marginBottom="8dp"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/borderView"
+            app:layout_constraintHorizontal_bias="0.489"
+            app:layout_constraintStart_toStartOf="@+id/borderView"
+            tools:ignore="TextContrastCheck"
+            tools:text="@string/subjectTitel_1" />
+
+        <CheckBox
+            android:id="@+id/cb_Subject"
+            android:layout_width="39dp"
+            android:layout_height="40dp"
+            android:minWidth="48dp"
+            android:minHeight="48dp"
+            app:layout_constraintStart_toStartOf="@+id/borderView"
+            app:layout_constraintTop_toTopOf="@+id/borderView" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
