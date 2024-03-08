@@ -125,7 +125,7 @@ class UserSubjectsFragment : Fragment() {
             Glide.with(this)
                 .load(userPhotoUri)
                 .transform(CircleCrop())
-                .error(R.drawable.baseline_person_24)
+                 
                 .into(userProfilePhoto)
         } else {
 

@@ -45,11 +45,12 @@ import com.examples.zuhauselernen.databinding.FragmentEmailBinding
 class EmailFragment : Fragment() {
     private lateinit var binding: FragmentEmailBinding
     private lateinit var context: Context
-    private lateinit var userProfile:UserProfile
+    private lateinit var userProfile: UserProfile
     override fun onAttach(context: Context) {
         super.onAttach(context)
         this.context = context
     }
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -59,7 +60,7 @@ class EmailFragment : Fragment() {
         binding.bottomNavigationView.setOnItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.home -> findNavController().navigate(EmailFragmentDirections.actionEmailFragmentToHomeFragment())
-                R.id.logout->{
+                R.id.logout -> {
 
                     requireActivity().finishAffinity()
                 }
@@ -248,8 +249,9 @@ class EmailFragment : Fragment() {
             /**
             Neue Variable user wird definiert
              */
-            val user = UserData("", "", "", "","","","",
-                "","",mutableListOf(), mutableListOf(),"",mutableListOf()
+            val user = UserData(
+                "", "", "", "", "", "", "",
+                "", "", mutableListOf(), mutableListOf(), "", mutableListOf()
             )
             /**
             Die vom Nutzer eingegebenen (first name, last name, e-mail address, password)
@@ -260,7 +262,7 @@ class EmailFragment : Fragment() {
             user.emailAdress = binding.eMailAdresse.text.toString()
             user.password = binding.password.text.toString()
 
-            val dbHelper= UserProfile(context)
+            val dbHelper = UserProfile(context)
             val db = dbHelper.writableDatabase
             if (db.version == 0) {
                 dbHelper.onCreate(db)
@@ -276,21 +278,21 @@ class EmailFragment : Fragment() {
                 put(COLUMN_REASON, "")
                 put(COLUMN_SCHOOL, "")
                 put(COLUMN_CLASS, "")
-                put(COLUMN_SUBJECT_ID,"")
-                put(COLUMN_SUBJECT_NAME,"")
-                put(COLUMN_SUBJECT_IMAGE,"")
-                put(COLUMN_SUBJECT_CHECKED,"")
-                put(COLUMN_PAYMENT_ID,"")
-                put(COLUMN_PAYMENT_NAME,"")
-                put(COLUMN_PAYMENT_IMAGE,"")
-                put(COLUMN_PAYMENT_SELECTED,"")
-                put(COLUMN_PAYMENT_ACCOUNT_OWNER,"")
-                put(COLUMN_PAYMENT_CARD_NUMBER,"")
-                put(COLUMN_PAYMENT_CARD_EXPIRY_DATE,"")
-                put(COLUMN_PAYMENT_SECURITY_CODE,"")
-                put(COLUMN_PAYMENT_BIRTHDATE,"")
-                put(COLUMN_PAYMENT_ADRESS,"")
-                put(COLUMN_PAYMENT_PLZ,"")
+                put(COLUMN_SUBJECT_ID, "")
+                put(COLUMN_SUBJECT_NAME, "")
+                put(COLUMN_SUBJECT_IMAGE, "")
+                put(COLUMN_SUBJECT_CHECKED, "")
+                put(COLUMN_PAYMENT_ID, "")
+                put(COLUMN_PAYMENT_NAME, "")
+                put(COLUMN_PAYMENT_IMAGE, "")
+                put(COLUMN_PAYMENT_SELECTED, "")
+                put(COLUMN_PAYMENT_ACCOUNT_OWNER, "")
+                put(COLUMN_PAYMENT_CARD_NUMBER, "")
+                put(COLUMN_PAYMENT_CARD_EXPIRY_DATE, "")
+                put(COLUMN_PAYMENT_SECURITY_CODE, "")
+                put(COLUMN_PAYMENT_BIRTHDATE, "")
+                put(COLUMN_PAYMENT_ADRESS, "")
+                put(COLUMN_PAYMENT_PLZ, "")
             }
             if (isEmailValid && isEmailRegistered &&
                 binding.confirmEmail.isEnabled &&
@@ -306,11 +308,23 @@ class EmailFragment : Fragment() {
                 }
                 db.insert(UserProfile.TABLE_NAME_USERS, null, values)
 
-                Toast.makeText(requireContext(), "Ihre Daten wurden erfolgreich gespeichert", Toast.LENGTH_SHORT).show()
-                findNavController().navigate(EmailFragmentDirections.actionEmailFragmentToSettingFragment(userEmail=binding.eMailAdresse.text.toString()))
+                Toast.makeText(
+                    requireContext(),
+                    "Ihre Daten wurden erfolgreich gespeichert",
+                    Toast.LENGTH_SHORT
+                ).show()
+                findNavController().navigate(
+                    EmailFragmentDirections.actionEmailFragmentToSettingFragment(
+                        userEmail = binding.eMailAdresse.text.toString()
+                    )
+                )
 
             } else {
-                Toast.makeText(requireContext(), "Please fill in all fields correctly.", Toast.LENGTH_SHORT).show()
+                Toast.makeText(
+                    requireContext(),
+                    "Please fill in all fields correctly.",
+                    Toast.LENGTH_SHORT
+                ).show()
             }
         }
 
